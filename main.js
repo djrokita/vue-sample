@@ -10,9 +10,9 @@ new Vue({
         dest: 'Wyborcza',
         hobbys: {
             forex: {
-                eurusd: 'buy',
-                dax: 'sell',
-                sp30: 'hold'
+                eurusd: 0,
+                dax: 0,
+                sp30: 0
             },
             coding: {
                 language: 'javascript',
@@ -39,6 +39,12 @@ new Vue({
         computeSalary() {
             console.log('countSalary was computed');
             return Math.floor(this.income - (this.income * this.tax / 100));
+        },
+        buy(event) {
+            console.log('buy', event);
+        },
+        sell(position) {
+
         }
     }
 });

@@ -18,7 +18,13 @@
         <ol :style="{'background-color': colors[styleColor]}">
             <li v-for="(value, key) in hobbys">{{key}}
                 <ul>
-                    <li v-for="(interes, item ) in value">{{item}} : {{interes}}</li>
+                    <div v-for="(interes, item ) in value">
+                        <p>{{item}} : {{interes}}</p>
+                        <div v-if="key === 'forex'">
+                            <button v-on:click="buy">Buy</button>
+                            <button>Sell</button>
+                        </div>
+                    </div>
                 </ul>
             </li>
         </ol>
